@@ -107,76 +107,25 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    social_impact_you = models.IntegerField(label="""Social impact (e.g., want to make a difference for the world):""",
-                                            choices=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-                                            widget=widgets.RadioSelectHorizontal)
-    social_impact_others = models.IntegerField(label="""Social impact (e.g., want to make a difference for the world):
-                                                """, choices=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-                                               widget=widgets.RadioSelectHorizontal)
-    money_you = models.IntegerField(label="""Money and prestige (e.g., reach high socio-economic status):""",
-                                    choices=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-                                    widget=widgets.RadioSelectHorizontal)
-    money_others = models.IntegerField(label="""Money and prestige (e.g., reach high socio-economic status):""",
-                                       choices=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], widget=widgets.RadioSelectHorizontal)
-    recognition_you = models.IntegerField(label="""Intellectual challenge & recognition (e.g., apply your skills and
-                                                talent to solve a problem, being recognized for your competence):""",
-                                          choices=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-                                          widget=widgets.RadioSelectHorizontal)
-    recognition_others = models.IntegerField(label="""Intellectual challenge & recognition (e.g., apply your skills and
-                                                talent to solve a problem, being recognized for your competence):""",
-                                             choices=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-                                             widget=widgets.RadioSelectHorizontal)
-    autonomy_you = models.IntegerField(label="""Autonomy (e.g., being able of making decisions, taking initiatives,
-                                                   being independent, organize your work as you like):""",
-                                       choices=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-                                       widget=widgets.RadioSelectHorizontal)
-    autonomy_others = models.IntegerField(label="""Autonomy (e.g., being able of making decisions, taking initiatives,
-                                                   being independent, organize your work as you like):""",
-                                          choices=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-                                          widget=widgets.RadioSelectHorizontal)
-    working_env_you = models.IntegerField(label="""Nice working environment (e.g., being treated fairly, getting along
-                                                well with boss and colleagues, non-monetary perks like good mensa):""",
-                                          choices=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-                                          widget=widgets.RadioSelectHorizontal)
-    working_env_others = models.IntegerField(label="""Nice working environment (e.g., being treated fairly, getting 
-                                                along well with boss and colleagues, non-monetary perks like good 
-                                                mensa):""", choices=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-                                             widget=widgets.RadioSelectHorizontal)
-    social_impact_you = models.IntegerField(label="""Social impact (e.g., want to make a difference for the world):""",
-                                            choices=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-                                            widget=widgets.RadioSelectHorizontal)
-    social_impact_others = models.IntegerField(label="""Social impact (e.g., want to make a difference for the world):
-                                                """, choices=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-                                               widget=widgets.RadioSelectHorizontal)
-    money_you = models.IntegerField(label="""Money and prestige (e.g., reach high socio-economic status):""",
-                                    choices=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-                                    widget=widgets.RadioSelectHorizontal)
-    money_others = models.IntegerField(label="""Money and prestige (e.g., reach high socio-economic status):""",
-                                       choices=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], widget=widgets.RadioSelectHorizontal)
-    recognition_you = models.IntegerField(label="""Intellectual challenge & recognition (e.g., apply your skills and
-                                                talent to solve a problem, being recognized for your competence):""",
-                                          choices=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-                                          widget=widgets.RadioSelectHorizontal)
-    recognition_others = models.IntegerField(label="""Intellectual challenge & recognition (e.g., apply your skills and
-                                                talent to solve a problem, being recognized for your competence):""",
-                                             choices=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-                                             widget=widgets.RadioSelectHorizontal)
-    autonomy_you = models.IntegerField(label="""Autonomy (e.g., being able of making decisions, taking initiatives,
-                                                   being independent, organize your work as you like):""",
-                                       choices=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-                                       widget=widgets.RadioSelectHorizontal)
-    autonomy_others = models.IntegerField(label="""Autonomy (e.g., being able of making decisions, taking initiatives,
-                                                   being independent, organize your work as you like):""",
-                                          choices=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-                                          widget=widgets.RadioSelectHorizontal)
-    working_env_you = models.IntegerField(label="""Nice working environment (e.g., being treated fairly, getting along
-                                                well with boss and colleagues, non-monetary perks like good mensa):""",
-                                          choices=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-                                          widget=widgets.RadioSelectHorizontal)
-    working_env_others = models.IntegerField(label="""Nice working environment (e.g., being treated fairly, getting 
-                                                along well with boss and colleagues, non-monetary perks like good 
-                                                mensa):""", choices=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-                                             widget=widgets.RadioSelectHorizontal)
+    c_range = range(0, 11, 1)
+    labels = ["Social impact (e.g., want to make a difference for the world):",
+              "Money and prestige (e.g., reach high socio-economic status):",
+              """Intellectual challenge & recognition (e.g., apply your skills and talent to solve a problem, 
+              being recognized for your competence):""", """Autonomy (e.g., being able of making decisions, taking 
+              initiatives, being independent, organize your work as you like):""", """Nice working environment (e.g., 
+              being treated fairly, getting along well with boss and colleagues, non-monetary perks like good mensa):
+              """]
+    
+    social_impact_you = models.IntegerField(label=labels[0], choices=c_range, widget=widgets.RadioSelectHorizontal)
+    social_impact_others = models.IntegerField(label=labels[0], choices=c_range, widget=widgets.RadioSelectHorizontal)
+    money_you = models.IntegerField(label=labels[1], choices=c_range, widget=widgets.RadioSelectHorizontal)
+    money_others = models.IntegerField(label=labels[1], choices=c_range, widget=widgets.RadioSelectHorizontal)
+    recognition_you = models.IntegerField(label=labels[2], choices=c_range, widget=widgets.RadioSelectHorizontal)
+    recognition_others = models.IntegerField(label=labels[2], choices=c_range, widget=widgets.RadioSelectHorizontal)
+    autonomy_you = models.IntegerField(label=labels[3], choices=c_range, widget=widgets.RadioSelectHorizontal)
+    autonomy_others = models.IntegerField(label=labels[3], choices=c_range, widget=widgets.RadioSelectHorizontal)
+    working_env_you = models.IntegerField(label=labels[4], choices=c_range, widget=widgets.RadioSelectHorizontal)
+    working_env_others = models.IntegerField(label=labels[4], choices=c_range, widget=widgets.RadioSelectHorizontal)
 
     difference_social_impact = models.IntegerField()
     difference_money = models.IntegerField()
@@ -190,3 +139,4 @@ class Player(BasePlayer):
         self.difference_recognition = abs(self.recognition_you - self.recognition_others)
         self.difference_autonomy = abs(self.autonomy_you - self.autonomy_others)
         self.difference_working_env = abs(self.working_env_you - self.working_env_others)
+        
