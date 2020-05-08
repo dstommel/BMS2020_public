@@ -1,0 +1,79 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Your results
+{% endblock %}
+
+{% block content %}
+    <style>
+        table, td, th{
+                    text-align: left;
+                    font-family: "Times New Roman", Times, serif;
+                    font-size: large;
+                    }
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            }
+
+        th, td {
+                padding: 3px;
+                border-left: 1px solid black;
+                border-right: 1px solid black;
+                }
+        th  {
+              border-bottom: 1px solid black;
+              font-weight: normal;
+        }
+    </style>
+    <p>
+    <table>
+      <tr>
+        <th> question </th>
+        <th> you </th>
+        <th> others </th>
+        <th> difference </th>
+      </tr>
+      <tr>
+        <td>Social impact</td>
+        <td>{{ player.social_impact_you }}</td>
+        <td>{{ player.social_impact_others }}</td>
+        <td>{{ player.difference_social_impact }}</td>
+      </tr>
+      <tr>
+        <td>Money and prestige</td>
+        <td>{{ player.money_you }}</td>
+        <td>{{ player.money_others }}</td>
+        <td>{{ player.difference_money }}</td>
+      </tr>
+        <tr>
+        <td>Intellectual challenge & recognition</td>
+        <td>{{ player.recognition_you }}</td>
+        <td>{{ player.recognition_others }}</td>
+        <td>{{ player.difference_recognition }}</td>
+      </tr>
+        <tr>
+        <td>Autonomy</td>
+        <td>{{ player.autonomy_you }}</td>
+        <td>{{ player.autonomy_others }}</td>
+        <td>{{ player.difference_autonomy }}</td>
+      </tr>
+        <tr>
+        <td>Nice working environment</td>
+        <td>{{ player.working_env_you }}</td>
+        <td>{{ player.working_env_others }}</td>
+        <td>{{ player.difference_working_env }}</td>
+      </tr>
+    </table>
+
+    </p>
+
+    <br>
+    <br>
+
+
+    {% next_button %}
+{% endblock %}
+
+
