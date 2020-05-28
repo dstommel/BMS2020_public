@@ -1,0 +1,113 @@
+{% load otree static %}
+
+<table class="table">
+    {% if player.id_in_group == 1 %}
+          <tr>
+            <th> Round </th>
+            <th> Your choice </th>
+            <th> Player 1's choice </th>
+            <th> Win/Draw/Loss </th>
+            <th> Round's payoff </th>
+          </tr>
+            <tr>
+                <td>1</td>
+                <td>{{ player_choices_1.0}}</td>
+                <td>{{ player_choices_2.0 }}</td>
+                <td>{% if player_payoffs_1.0 == 1 %}
+                    Win
+                    {% else %}
+                        {% if player_payoffs_1.0 == 0 %}
+                        Draw
+                        {% else %}
+                        Loss
+                        {% endif %}
+                    {% endif %}</td>
+                <td>{{ player_payoffs_1.0 }}</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>{{ player_choices_1.1 }}</td>
+                <td>{{ player_choices_2.1 }}</td>
+                <td>{% if player_payoffs_1.1 == 1 %}
+                    Win
+                    {% else %}
+                        {% if player_payoffs_1.1 == 0 %}
+                        Draw
+                        {% else %}
+                        Loss
+                        {% endif %}
+                    {% endif %}</td>
+                <td>{{ player_payoffs_1.1 }}</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>{{ player_choices_1.2 }}</td>
+                <td>{{ player_choices_2.2 }}</td>
+                <td>{% if player_payoffs_1.2 == 1 %}
+                    Win
+                    {% else %}
+                        {% if player_payoffs_1.2 == 0 %}
+                        Draw
+                        {% else %}
+                        Loss
+                        {% endif %}
+                    {% endif %}</td>
+                <td>{{ player_payoffs_1.2 }}</td>
+            </tr>
+    {% else %}
+        <tr>
+            <th> Round </th>
+            <th> Your choice </th>
+            <th> Player 2's choice </th>
+            <th> Win/Draw/Loss </th>
+            <th> Round's payoff </th>
+          </tr>
+            <tr>
+                <td>1</td>
+                <td>{{ player_choices_2.0 }}</td>
+                <td>{{ player_choices_1.0 }}</td>
+                <td>{% if player_payoffs_2.0 == 1 %}
+                    Win
+                    {% else %}
+                        {% if player_payoffs_2.0 == 0 %}
+                        Draw
+                        {% else %}
+                        Loss
+                        {% endif %}
+                    {% endif %}</td>
+                <td>{{ player_payoffs_2.0 }}</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>{{ player_choices_2.1 }}</td>
+                <td>{{ player_choices_1.1 }}</td>
+                <td>{% if player_payoffs_2.1 == 1 %}
+                    Win
+                    {% else %}
+                        {% if player_payoffs_2.1 == 0 %}
+                        Draw
+                        {% else %}
+                        Loss
+                        {% endif %}
+                    {% endif %}</td>
+                <td>{{ player_payoffs_2.1 }}</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>{{ player_choices_2.2 }}</td>
+                <td>{{ player_choices_1.2 }}</td>
+                <td>{% if player_payoffs_2.2 == 1 %}
+                    Win
+                    {% else %}
+                        {% if player_payoffs_2.2 == 0 %}
+                        Draw
+                        {% else %}
+                        Loss
+                        {% endif %}
+                    {% endif %}</td>
+                <td>{{ player_payoffs_2.2 }}</td>
+            </tr>
+    {% endif %}
+</table>
+
+

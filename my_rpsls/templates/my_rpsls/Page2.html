@@ -1,0 +1,18 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Player 2 - Round {{ player.round_number }} of {{ Constants.num_rounds }}
+{% endblock %}
+
+{% block content %}
+
+You are Player 2
+
+{% formfields %}
+
+{% next_button %}
+
+{% include Constants.instructions_template %}
+
+{% endblock %}
